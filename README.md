@@ -9,6 +9,9 @@ Kalian bisa pakai Hostingan untuk deployment : [Hostingan](https://hostingan.id)
 sanagat sederhana:
 Menggunakan PHP dan Javascript
 
+==
+Update : Fitur Admin | untuk dokumentasinya baca Readme.md pada dir /admin
+==
 ## Fitur
 
 - **Chat dengan Secret ID**: Hanya orang yang saling tahu dan memasukkan Secret ID pengguna yang bisa melakukan chat.
@@ -57,4 +60,3 @@ Menggunakan PHP dan Javascript
 
 ```php
 domainmu.com/cleanup.php
-  
