@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])) {
+if (isset($_SESSION['username'])) {
     header("Location: chat.php");
     exit();
 }
@@ -10,83 +10,37 @@ if(isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Login/Register</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f2f5;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        .form-container {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-            color: #007bff;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 5px 0;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px; /* Ukuran font untuk mencegah zoom */
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background: #45a049;
-        }
-        .social-links {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #007bff;
-        }
-        .copyright {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+    <title>Secret Chat</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
-        <div class="form-container">
+        <h1>Secret Chat</h1>
+        <p class="description">Aplikasi chat rahasia untuk komunikasi pribadi</p>
+        <div class="buttons">
+            <button class="toggle-button" onclick="toggleForm('login')">Login</button>
+            <button class="toggle-button" onclick="toggleForm('register')">Register</button>
+        </div>
+
+        <!-- Tombol Cara Penggunaan -->
+        <div class="usage-button">
+            <button class="toggle-button" onclick="toggleUsage()">Cara Penggunaan</button>
+        </div>
+        
+        <!-- Form Login -->
+        <div id="login-form" class="form-container hidden">
             <h2>Login</h2>
-            <form id="login-form">
+            <form>
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>
+        </div>
 
+        <!-- Form Register -->
+        <div id="register-form" class="form-container hidden">
             <h2>Register</h2>
-            <form id="register-form">
+            <form>
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="text" name="secret_code" placeholder="Secret Code" required>
@@ -94,17 +48,42 @@ if(isset($_SESSION['username'])) {
             </form>
         </div>
 
-        <div class="social-links">
-            <a href="https://marioardi.dev" target="_blank">Website</a>
-            <a href="https://facebook.com/badas.net" target="_blank">Facebook</a>
-            <a href="https://github.com/marioardi97" target="_blank">GitHub</a>
-        </div>
-
-        <div class="copyright">
-            <p>&copy; <?php echo date("Y"); ?> Mario Ardi. All rights reserved.</p>
+        <!-- Informasi Cara Penggunaan -->
+        <div id="usage-info" class="usage-container hidden">
+            <p>Daftar terlebih dahulu, lalu login. Untuk dapat terhubung dengan lawan bicara, kalian perlu saling memasukkan secret code — yaitu kode yang kalian masukkan saat registrasi dan juga terlihat di dashboard Secret Chat. Tenang, chat akan otomatis terhapus setiap 30 menit.</p>
         </div>
     </div>
 
-    <script src="auth.js"></script>
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; <?php echo date("Y"); ?> Mario Ardi.</p>
+        <p>
+            <a href="https://github.com/marioardi97/Aplikasi-Chatting-Sederhana" target="_blank">Secret Chat GitHub Repository</a> | 
+            <a href="https://facebook.com/badas.net" target="_blank">Facebook</a> | 
+            <a href="https://github.com/marioardi97" target="_blank">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/mario-ardi-09b9101ab/" target="_blank">LinkedIn</a> | 
+            <a href="https://hostingan.id" target="_blank">Support by Hostingan</a>
+        </p>
+    </div>
+
+    <script>
+        function toggleForm(formId) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            
+            if (formId === 'login') {
+                loginForm.classList.toggle('hidden');
+                registerForm.classList.add('hidden');
+            } else if (formId === 'register') {
+                registerForm.classList.toggle('hidden');
+                loginForm.classList.add('hidden');
+            }
+        }
+
+        function toggleUsage() {
+            const usageInfo = document.getElementById('usage-info');
+            usageInfo.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
