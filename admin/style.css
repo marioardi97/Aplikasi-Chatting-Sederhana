@@ -1,0 +1,262 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Warna dasar untuk tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Menghilangkan underline untuk link */
+    display: inline-block; /* Agar tampak sebagai tombol */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+    width: 100%; /* Membuat tombol responsif */
+    margin: 5px 0; /* Margin untuk jarak antar tombol */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+}
+
+.button.edit {
+    background-color: #28a745;
+}
+
+.button.edit:hover {
+    background-color: #218838;
+}
+
+.button.delete {
+    background-color: #dc3545;
+}
+
+.button.delete:hover {
+    background-color: #c82333;
+}
+
+.pagination {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center; /* Pusatkan pagination */
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Media Query untuk Responsif */
+@media (max-width: 600px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 14px; /* Ukuran font lebih kecil untuk layar kecil */
+    }
+
+    .button {
+        padding: 8px; /* Sesuaikan padding tombol */
+        font-size: 14px; /* Ukuran font untuk tombol */
+    }
+
+    .pagination a {
+        padding: 4px 8px; /* Ukuran tombol pagination */
+        font-size: 14px; /* Ukuran font untuk pagination */
+    }
+
+    /* Ubah margin dan ukuran input pada layar kecil */
+    input[type="text"], input[type="password"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+.button-group {
+    display: flex; /* Menggunakan flexbox untuk penataan tombol */
+    justify-content: flex-end; /* Menempatkan tombol di sebelah kanan */
+    margin-top: 10px; /* Jarak antara tombol dan input di atasnya */
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Warna dasar untuk tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Menghilangkan underline untuk link */
+    display: inline-block; /* Agar tampak sebagai tombol */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+    margin-left: 10px; /* Jarak antara tombol */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+}
+/* Tambahkan ini di dalam file style.css Anda */
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Menyesuaikan tombol agar dapat berpindah baris jika tidak muat */
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Jarak antar tombol */
+    width: 100%; /* Mengatur lebar tombol agar responsif */
+    max-width: 150px; /* Menentukan lebar maksimum untuk tombol */
+    box-sizing: border-box; /* Memastikan padding tidak menambah ukuran total */
+}
+
+/* Untuk tombol logout */
+.logout-btn {
+    padding: 10px 15px;
+    background-color: #dc3545; /* Warna merah untuk logout */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Menghilangkan underline untuk link */
+    display: inline-block; /* Agar tampak sebagai tombol */
+    width: 100%; /* Mengatur lebar agar responsif */
+    max-width: 150px; /* Lebar maksimum untuk tombol logout */
+}
+
+@media (max-width: 600px) {
+    .button {
+        width: 100%; /* Tombol akan memenuhi lebar penuh pada perangkat kecil */
+        margin-left: 0; /* Menghilangkan margin pada perangkat kecil */
+        margin-bottom: 10px; /* Jarak antar tombol di bawah */
+    }
+}
+/* CSS untuk tombol dalam tabel */
+.table-action {
+    display: flex; /* Menggunakan flexbox untuk mengatur tombol */
+    justify-content: flex-start; /* Mengatur tombol agar rata kiri */
+    gap: 10px; /* Jarak antar tombol */
+}
+
+.btn {
+    padding: 5px 10px; /* Ukuran padding untuk tombol */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Mengatur lebar tombol agar responsif */
+    max-width: 80px; /* Mengatur lebar maksimum untuk tombol */
+    box-sizing: border-box; /* Memastikan padding tidak menambah ukuran total */
+}
+
+.btn.edit {
+    background-color: #28a745; /* Warna hijau untuk tombol edit */
+    color: white;
+}
+
+.btn.edit:hover {
+    background-color: #218838; /* Warna lebih gelap saat hover */
+}
+
+.btn.delete {
+    background-color: #dc3545; /* Warna merah untuk tombol delete */
+    color: white;
+}
+
+.btn.delete:hover {
+    background-color: #c82333; /* Warna lebih gelap saat hover */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 600px) {
+    .table-action {
+        flex-direction: column; /* Menyusun tombol secara vertikal */
+        align-items: flex-start; /* Rata kiri untuk tombol */
+    }
+
+    .btn {
+        width: 100%; /* Tombol akan memenuhi lebar penuh pada perangkat kecil */
+        max-width: none; /* Menghapus lebar maksimum untuk tampilan penuh */
+        margin-bottom: 5px; /* Jarak antar tombol di bawah */
+    }
+}
+
