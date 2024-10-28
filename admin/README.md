@@ -7,7 +7,7 @@ Untuk mulai menggunakan fitur admin, buatlah tabel ganteng di database Anda. Tab
 Perintah SQL untuk Membuat Tabel
 Jalankan perintah berikut di command line MySQL atau di tool database Anda untuk membuat tabel ganteng:
 
-Copy code
+
 CREATE TABLE ganteng (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL UNIQUE,
