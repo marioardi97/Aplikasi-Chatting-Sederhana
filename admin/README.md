@@ -1,5 +1,7 @@
 Panduan Penggunaan Fitur Admin
-Fitur admin ini memungkinkan pengguna dengan hak akses tertentu untuk melakukan manajemen terhadap pengguna lainnya. Untuk mengaktifkan fitur admin, Anda perlu membuat tabel ganteng di database dan menambahkan pengguna admin dengan perintah SQL.
+Fitur admin ini memungkinkan pengguna dengan hak akses tertentu untuk melakukan manajemen terhadap pengguna lainnya. Untuk mengaktifkan fitur admin, 
+
+Anda perlu membuat tabel ganteng di database dan menambahkan pengguna admin dengan perintah SQL.
 
 1. Membuat Tabel Admin ganteng
 Untuk mulai menggunakan fitur admin, buatlah tabel ganteng di database Anda. Tabel ini akan digunakan untuk menyimpan data login admin.
@@ -23,5 +25,7 @@ Catatan:
 
 Password admin disimpan menggunakan algoritma MD5, berbeda dengan pengguna biasa yang disimpan menggunakan bcrypt.
 Gantilah mysecurepassword dengan kata sandi yang kuat untuk admin.
+
+Jangan lupa update file config nya sesuaikan dengan nama,user dan password db kalian di file confing.php
 
 akses admin : domain.com/admin
