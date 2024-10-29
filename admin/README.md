@@ -26,6 +26,4 @@ Catatan:
 Password admin disimpan menggunakan algoritma MD5, berbeda dengan pengguna biasa yang disimpan menggunakan bcrypt.
 Gantilah mysecurepassword dengan kata sandi yang kuat untuk admin.
 
-Jangan lupa update file config nya sesuaikan dengan nama,user dan password db kalian di file confing.php
-
 akses admin : domain.com/admin
